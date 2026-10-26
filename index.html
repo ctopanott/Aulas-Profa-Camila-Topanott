@@ -120,9 +120,11 @@ button,input,textarea{font:inherit;color:inherit}
 <script>
 /* =====================================================================
    LISTA DE TURMAS E AULAS
-   Para acrescentar uma aula, copie um bloco { titulo: ..., pdf: "" },
-   cole logo abaixo do último da turma (separado por vírgula) e troque
-   os textos. "link" abre os slides; "pdf" é opcional (link para baixar).
+   Para acrescentar uma aula: envie o PDF para a pasta "aulas" do
+   repositório, copie um bloco { titulo: ..., pdf: "" }, cole logo abaixo
+   do último da turma (separado por vírgula) e troque os textos.
+   "link" = o arquivo da aula (ex.: "aulas/nome-do-arquivo.pdf") ou um
+   endereço da internet. "pdf" é opcional (outro material para baixar).
    O "id" da turma vira o final do link e do QR code: use só letras
    minúsculas, números e hífen.
    ===================================================================== */
@@ -136,10 +138,12 @@ var DADOS = {
       curso: "Técnico em Automação Industrial",
       unidade: "Fundamentos de Eletroeletrônica",
       aulas: [
-        { titulo: "Capacitores", descricao: "Capacitância, associação, reatância capacitiva e defasagem", data: "", link: "https://claude.ai/artifact/WM2io9RkBYYBC5NBALVJRo", pdf: "" },
-        { titulo: "Indutores", descricao: "Indutância, associação, reatância indutiva e o CIVIL", data: "", link: "https://claude.ai/artifact/WWAVJQR3PQYwseb3Ey2d4d", pdf: "" },
-        { titulo: "Circuito RLC", descricao: "Tensões defasadas, Pitágoras, impedância e ressonância", data: "", link: "https://claude.ai/artifact/Rdhb4GUX1fLJzHrr5B9s1K", pdf: "" },
-        { titulo: "Revisão e atividade avaliativa", descricao: "Do resistor ao circuito RLC série, com questões e gabarito", data: "", link: "https://claude.ai/artifact/1ENDNFF45umNeqsyywhTi4", pdf: "" }
+        { titulo: "Cargas elétricas e eletrização", descricao: "Átomo, carga elétrica e eletrização por atrito, contato e indução", data: "", link: "aulas/cargas-eletricas.pdf", pdf: "" },
+        { titulo: "Resistores", descricao: "Lei de Ohm, código de cores, associação de resistores e potência", data: "", link: "aulas/resistores.pdf", pdf: "" },
+        { titulo: "Capacitores", descricao: "Capacitância, associação, reatância capacitiva e defasagem", data: "", link: "aulas/capacitores.pdf", pdf: "" },
+        { titulo: "Indutores", descricao: "Indutância, associação, reatância indutiva e o CIVIL", data: "", link: "aulas/indutores.pdf", pdf: "" },
+        { titulo: "Circuito RLC", descricao: "Tensões defasadas, Pitágoras, impedância e ressonância", data: "", link: "aulas/circuito-rlc.pdf", pdf: "" },
+        { titulo: "Revisão e atividade avaliativa", descricao: "Do resistor ao circuito RLC série, com questões e gabarito", data: "", link: "aulas/revisao.pdf", pdf: "" }
       ]
     },
     {
@@ -173,7 +177,8 @@ var DADOS = {
   var raiz = document.getElementById("raiz");
   var estado = { turma: null, projetar: false, aviso: "", avisoTipo: "" };
   function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
-  function seguro(u){ u = String(u || "").trim(); return /^https?:\/\//i.test(u) ? u : ""; }
+  function seguro(u){ u = String(u || "").trim(); if (/^https?:\/\//i.test(u)) return u; return /^[A-Za-z0-9][A-Za-z0-9._\/-]*$/.test(u) && u.indexOf("..") < 0 ? u : ""; }
+  function ehArquivo(u){ return !/^https?:\/\//i.test(u); }
   function pad(n){ return n < 10 ? "0" + n : String(n); }
   function lerLocal(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
   function gravarLocal(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
@@ -215,6 +220,7 @@ var DADOS = {
             (a.descricao ? '<p>' + esc(a.descricao) + '</p>' : '') + (a.data ? '<p class="data">' + esc(a.data) + '</p>' : '') +
             '</div><div class="acoes">' +
             (link ? '<a class="botao" href="' + esc(link) + '" target="_blank" rel="noopener">Abrir aula</a>' : '') +
+            (link && ehArquivo(link) ? '<a class="botao sec" href="' + esc(link) + '" download>Baixar</a>' : '') +
             (pdf ? '<a class="botao sec" href="' + esc(pdf) + '" target="_blank" rel="noopener">Baixar material</a>' : '') +
             '</div></li>';
         });
