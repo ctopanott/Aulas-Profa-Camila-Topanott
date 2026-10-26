@@ -15,22 +15,37 @@ img{max-width:100%}
 
 /* Layout: uma coluna estreita; cabeçalho com o nome, seletor de turmas, lista numerada de aulas, área da professora no fim */
 :root{
-  --papel:#F4F5F2; --superficie:#FFFFFF; --tinta:#16232C; --suave:#55636C; --linha:#D9DEDB;
-  --cobre:#A9501F; --cobre-fundo:#F6E6DA; --tinta-forte:#0F1A21; --sobre-cobre:#FFFFFF;
-  --ok:#2F6B4F; --alerta:#9A3B1C;
+  --papel:#F7F4EF; --superficie:#FFFFFF; --tinta:#2F3A45; --suave:#64707B; --linha:#E4DED5;
+  --cobre:#9A5A36; --cobre-fundo:#F7E2D3; --tinta-forte:#26313B; --sobre-cobre:#FFFFFF;
+  --ok:#3F6B4F; --alerta:#9A3B1C;
+  --botao-fundo:#F6D9C6; --botao-texto:#5A3422; --botao-borda:#EBC2A7;
+  --botao2-fundo:#E2ECF7; --botao2-texto:#24405F; --botao2-borda:#BCD2EA;
+  --chip-fundo:#FFFFFF; --chip-texto:#2F3A45; --chip-borda:#E4DED5;
+  --chip-ativo-fundo:#D4E5F5; --chip-ativo-texto:#1E3A5A; --chip-ativo-borda:#9FC0E2;
+  --tag-fundo:#E1EEDB; --tag-texto:#3D5F2E;
   --f-titulo:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
   --f-texto:"Barlow",Arial,Helvetica,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --papel:#10171B; --superficie:#172128; --tinta:#E5EAEC; --suave:#A3B0B6; --linha:#2A363D;
-  --cobre:#E59162; --cobre-fundo:#3A2519; --tinta-forte:#F2F5F6; --sobre-cobre:#1B0F08;
-  --ok:#7CC4A0; --alerta:#F0A07C; color-scheme:dark;
+  --papel:#22272C; --superficie:#2B3137; --tinta:#E8E5E0; --suave:#B4BAC0; --linha:#3D444B;
+  --cobre:#E8B595; --cobre-fundo:#4A382D; --tinta-forte:#F3F0EB; --sobre-cobre:#2A1A10;
+  --ok:#9CCFAE; --alerta:#F0A982;
+  --botao-fundo:#5C4535; --botao-texto:#F8E6D9; --botao-borda:#76594A;
+  --botao2-fundo:#344A61; --botao2-texto:#E3EEF9; --botao2-borda:#4B6684;
+  --chip-fundo:#2B3137; --chip-texto:#E8E5E0; --chip-borda:#3D444B;
+  --chip-ativo-fundo:#3E5875; --chip-ativo-texto:#EAF2FB; --chip-ativo-borda:#5C7C9E;
+  --tag-fundo:#36492F; --tag-texto:#D3EBC6; color-scheme:dark;
 }}
 :root[data-theme="dark"]{
-  --papel:#10171B; --superficie:#172128; --tinta:#E5EAEC; --suave:#A3B0B6; --linha:#2A363D;
-  --cobre:#E59162; --cobre-fundo:#3A2519; --tinta-forte:#F2F5F6; --sobre-cobre:#1B0F08;
-  --ok:#7CC4A0; --alerta:#F0A07C; color-scheme:dark;
+  --papel:#22272C; --superficie:#2B3137; --tinta:#E8E5E0; --suave:#B4BAC0; --linha:#3D444B;
+  --cobre:#E8B595; --cobre-fundo:#4A382D; --tinta-forte:#F3F0EB; --sobre-cobre:#2A1A10;
+  --ok:#9CCFAE; --alerta:#F0A982;
+  --botao-fundo:#5C4535; --botao-texto:#F8E6D9; --botao-borda:#76594A;
+  --botao2-fundo:#344A61; --botao2-texto:#E3EEF9; --botao2-borda:#4B6684;
+  --chip-fundo:#2B3137; --chip-texto:#E8E5E0; --chip-borda:#3D444B;
+  --chip-ativo-fundo:#3E5875; --chip-ativo-texto:#EAF2FB; --chip-ativo-borda:#5C7C9E;
+  --tag-fundo:#36492F; --tag-texto:#D3EBC6; color-scheme:dark;
 }
 body{background:var(--papel);color:var(--tinta);font:17px/1.55 var(--f-texto);
   padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
@@ -41,15 +56,15 @@ a{color:var(--cobre)}
 button,input,textarea{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--cobre);outline-offset:2px;border-radius:6px}
 
-.topo{display:flex;flex-direction:column;gap:10px;border-bottom:2px solid var(--tinta);padding-bottom:24px}
+.topo{display:flex;flex-direction:column;gap:10px;border-bottom:2px solid var(--linha);padding-bottom:24px}
 .rotulo{font:500 13px/1.3 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--cobre)}
 .topo h1{font:700 clamp(40px,8vw,64px)/1 var(--f-titulo);color:var(--tinta-forte);letter-spacing:.005em}
 .topo .intro{color:var(--suave);max-width:60ch}
 
 .turmas{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1.5px solid var(--linha);background:var(--superficie);border-radius:999px;padding:8px 16px;cursor:pointer;font-weight:500}
-.chip:hover{border-color:var(--cobre)}
-.chip.ativo{background:var(--tinta-forte);border-color:var(--tinta-forte);color:var(--papel)}
+.chip{display:inline-block;border:1.5px solid var(--chip-borda);background:var(--chip-fundo);color:var(--chip-texto);text-decoration:none;border-radius:999px;padding:8px 18px;cursor:pointer;font-weight:500}
+.chip:hover{border-color:var(--chip-ativo-borda);background:var(--botao2-fundo)}
+.chip.ativo{background:var(--chip-ativo-fundo);border-color:var(--chip-ativo-borda);color:var(--chip-ativo-texto);font-weight:600}
 .chip.novo{border-style:dashed;color:var(--cobre)}
 
 .turma{display:flex;flex-direction:column;gap:20px}
@@ -64,11 +79,11 @@ button,input,textarea{font:inherit;color:inherit}
 .aula-texto h3{font:600 20px/1.25 var(--f-texto)}
 .aula-texto p{color:var(--suave);font-size:16px}
 .aula-texto .data{font:500 13px/1.3 var(--f-mono);color:var(--suave)}
-.novidade{display:inline-block;margin-left:8px;font:500 11px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--cobre);background:var(--cobre-fundo);padding:4px 7px;border-radius:4px;vertical-align:3px}
+.novidade{display:inline-block;margin-left:8px;font:500 11px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--tag-texto);background:var(--tag-fundo);padding:4px 7px;border-radius:4px;vertical-align:3px}
 .acoes{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.botao{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:10px 16px;font-weight:600;text-decoration:none;cursor:pointer;border:1.5px solid var(--cobre);background:var(--cobre);color:var(--sobre-cobre);white-space:nowrap}
-.botao:hover{filter:brightness(1.07)}
-.botao.sec{background:transparent;color:var(--cobre)}
+.botao{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:8px;padding:10px 16px;font-weight:600;text-decoration:none;cursor:pointer;border:1.5px solid var(--botao-borda);background:var(--botao-fundo);color:var(--botao-texto);white-space:nowrap}
+.botao:hover{filter:brightness(0.96)}
+.botao.sec{background:var(--botao2-fundo);border-color:var(--botao2-borda);color:var(--botao2-texto)}
 .botao.leve{background:transparent;border-color:var(--linha);color:var(--tinta)}
 .botao[disabled]{opacity:.55;cursor:default}
 .vazio{color:var(--suave);padding:24px;border:1.5px dashed var(--linha);border-radius:10px;text-align:center}
@@ -201,7 +216,7 @@ var DADOS = {
     h += '<nav class="turmas" aria-label="Turmas">';
     DADOS.turmas.forEach(function(x){
       var at = t && x.id === t.id;
-      h += '<a class="chip' + (at ? ' ativo' : '') + '" href="#' + esc(x.id) + '"' + (at ? ' aria-current="page"' : '') + ' style="text-decoration:none;color:inherit">' + esc(x.nome) + '</a>';
+      h += '<a class="chip' + (at ? ' ativo' : '') + '" href="#' + esc(x.id) + '"' + (at ? ' aria-current="page"' : '') + '>' + esc(x.nome) + '</a>';
     });
     h += '</nav>';
     if (!t) { h += '<p class="vazio">Nenhuma turma cadastrada ainda.</p>'; }
