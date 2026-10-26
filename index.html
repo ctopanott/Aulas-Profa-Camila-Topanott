@@ -120,8 +120,67 @@ button,input,textarea{font:inherit;color:inherit}
 .projecao p{font-size:20px;color:#55636C}
 .projecao .fechar{position:absolute;top:calc(16px + env(safe-area-inset-top, 0px));right:max(16px, env(safe-area-inset-right, 0px));background:#16232C;color:#FFFFFF;border:0;border-radius:8px;padding:10px 16px;font-weight:600;cursor:pointer}
 
+/* ---- Desafios ---- */
+.secao-cab{display:flex;flex-direction:column;gap:4px}
+.secao-cab h2{font:700 30px/1.05 var(--f-titulo);color:var(--tinta-forte)}
+.secao-cab p{color:var(--suave)}
+.desafios{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.cartao-desafio{display:flex;flex-direction:column;gap:8px;height:100%;box-sizing:border-box;padding:18px;border:1.5px solid var(--linha);border-radius:12px;background:var(--superficie);text-decoration:none;color:var(--tinta)}
+.cartao-desafio:hover{border-color:var(--cobre)}
+.cartao-desafio .chamada{font:600 19px/1.25 var(--f-texto);color:var(--tinta-forte)}
+.cartao-desafio .det{color:var(--suave);font-size:15px;flex:1}
+.cartao-desafio .rodape-c{display:flex;justify-content:space-between;align-items:center;gap:8px;font:500 13px/1.3 var(--f-mono);color:var(--suave)}
+.selo{font:500 12px/1 var(--f-mono);padding:5px 8px;border-radius:4px;background:var(--tag-fundo);color:var(--tag-texto);white-space:nowrap}
+.selo.baixo{background:var(--cobre-fundo);color:var(--botao-texto)}
+
+.voltar{align-self:flex-start;background:none;border:0;padding:0;color:var(--cobre);font-weight:600;cursor:pointer;text-decoration:none}
+.questoes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.questao{border:1px solid var(--linha);border-radius:12px;background:var(--superficie);padding:20px;display:flex;flex-direction:column;gap:14px}
+.questao.certa{border-color:var(--ok);border-width:2px}
+.questao.errada{border-color:var(--alerta);border-width:2px}
+.q-cab{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.q-num{font:500 13px/1.2 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--suave)}
+.q-fonte{font:500 12px/1 var(--f-mono);color:var(--botao2-texto);background:var(--botao2-fundo);padding:5px 8px;border-radius:4px}
+.enunciado{font-size:17px}
+.alts{display:flex;flex-direction:column;gap:8px;border:0;margin:0;padding:0;min-width:0}
+.alt{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;padding:10px 12px;border:1.5px solid var(--linha);border-radius:10px;cursor:pointer;background:var(--papel)}
+.alt:hover{border-color:var(--chip-ativo-borda)}
+.alt input{position:absolute;opacity:0;pointer-events:none}
+.alt .letra{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:1.5px solid var(--linha);font:600 14px/1 var(--f-mono);box-sizing:border-box}
+.alt.marcada{border-color:var(--chip-ativo-borda);background:var(--chip-ativo-fundo);color:var(--chip-ativo-texto)}
+.alt.marcada .letra{background:var(--chip-ativo-texto);border-color:var(--chip-ativo-texto);color:var(--chip-ativo-fundo)}
+.alt:has(input:focus-visible){outline:3px solid var(--cobre);outline-offset:2px}
+.alt.fixa{cursor:default}
+.alt.e-certa{border-color:var(--ok);background:var(--tag-fundo);color:var(--tag-texto)}
+.alt.e-certa .letra{background:var(--ok);border-color:var(--ok);color:var(--superficie)}
+.alt.e-errada{border-color:var(--alerta);background:var(--cobre-fundo);color:var(--botao-texto)}
+.alt.e-errada .letra{background:var(--alerta);border-color:var(--alerta);color:var(--superficie)}
+.alt .marca{font:500 12px/1.3 var(--f-mono);display:block;margin-top:2px}
+.veredito{font-weight:600}
+.veredito.ok{color:var(--ok)}
+.veredito.erro{color:var(--alerta)}
+.justificativa{border-left:3px solid var(--cobre);padding:4px 0 4px 14px;display:flex;flex-direction:column;gap:4px}
+.justificativa strong{font:500 12px/1.2 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--cobre)}
+.placar{display:flex;gap:24px;align-items:center;flex-wrap:wrap;background:var(--superficie);border:1px solid var(--linha);border-radius:12px;padding:24px}
+.placar .pct{font:700 clamp(56px,14vw,88px)/1 var(--f-titulo);color:var(--tinta-forte)}
+.placar .pct.bom{color:var(--ok)}
+.placar .pct.baixo{color:var(--alerta)}
+.placar-texto{display:flex;flex-direction:column;gap:6px;flex:1;min-width:200px}
+.placar-texto .msg{font:600 20px/1.3 var(--f-texto)}
+.barra{height:10px;border-radius:999px;background:var(--linha);overflow:hidden}
+.barra span{display:block;height:100%;background:var(--ok)}
+.filtro{display:flex;gap:8px;flex-wrap:wrap}
+.envio{display:flex;gap:12px;align-items:center;flex-wrap:wrap;position:sticky;bottom:0;background:var(--papel);border-top:2px solid var(--linha);padding:14px 0 calc(14px + env(safe-area-inset-bottom, 0px))}
+.fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;font-size:.95em;line-height:1.2;margin:0 2px}
+.fr>span:first-child{border-bottom:1.5px solid currentColor;padding:0 3px 1px}
+.fr>span:last-child{padding:1px 3px 0}
+.rz{white-space:nowrap}
+.rz>span{border-top:1.5px solid currentColor;padding:0 2px}
+sup,sub{line-height:0}
+
 @media (max-width:640px){
   .aula{grid-template-columns:1fr;gap:6px}
+  .questao{padding:16px}
   .acoes{justify-content:flex-start}
   .grade{grid-template-columns:1fr}
 }
@@ -145,7 +204,7 @@ button,input,textarea{font:inherit;color:inherit}
    ===================================================================== */
 var DADOS = {
   professora: "Camila",
-  apresentacao: "Slides e materiais das aulas, separados por turma. Escolha a sua turma e abra a aula do dia.",
+  apresentacao: "Slides, materiais e desafios das aulas. Abra a aula do dia ou teste seus conhecimentos nos desafios.",
   turmas: [
     {
       id: "automacao-b",
@@ -160,7 +219,11 @@ var DADOS = {
         { titulo: "Circuito RLC", descricao: "Tensões defasadas, Pitágoras, impedância e ressonância", data: "", link: "circuito-rlc.pdf", pdf: "" },
         { titulo: "Revisão e atividade avaliativa", descricao: "Do resistor ao circuito RLC série, com questões e gabarito", data: "", link: "revisao.pdf", pdf: "" }
       ]
-    },
+    }
+  ],
+  /* TURMAS GUARDADAS — não aparecem no site. Para voltar a mostrar uma turma,
+     recorte o bloco { id: ... } dela daqui e cole dentro de "turmas", acima. */
+  turmasGuardadas: [
     {
       id: "turma-l",
       nome: "Turma L",
@@ -184,73 +247,612 @@ var DADOS = {
     }
   ]
 };
+
+/* =====================================================================
+   DESAFIOS (questionários) — separados pelo "id" da turma
+   Cada desafio tem: id (vira o final do link), tema, descrição e as questões.
+   Cada questão tem: fonte, enunciado, alternativas (A, B, C...), correta
+   (a letra) e justificativa.
+   Escrita especial nos textos:
+     {{numerador|denominador}}  → fração empilhada
+     10^{−6}                    → expoente (sobrescrito)
+     X_{C}                      → índice (subscrito)
+     √{R^{2} + X^{2}}           → raiz quadrada
+   ===================================================================== */
+var DESAFIOS = {
+  "automacao-b": [
+    {
+      id: "cargas-eletricas",
+      tema: "cargas elétricas e eletrização",
+      descricao: "Atrito, contato, indução e quantidade de carga",
+      questoes: [
+        {
+          fonte: "Estilo ENEM",
+          enunciado: "Num dia seco, um estudante penteia o cabelo com um pente de plástico e, em seguida, aproxima o pente de pedacinhos de papel picado, que são atraídos por ele. Esse fenômeno acontece porque",
+          alternativas: [
+            "o pente ficou magnetizado pelo atrito e atrai o papel como um ímã.",
+            "o pente foi eletrizado por atrito e, ao se aproximar, provoca uma separação de cargas no papel neutro, que acaba atraído.",
+            "o papel já estava carregado com carga de sinal oposto ao do pente antes da aproximação.",
+            "o cabelo transferiu prótons para o pente, que passou a atrair os elétrons do papel.",
+            "o atrito aqueceu o pente, e o ar quente arrasta o papel em direção a ele."
+          ],
+          correta: "B",
+          justificativa: "O atrito transfere elétrons entre o cabelo e o pente, que fica eletrizado. O papel continua neutro, mas, com o pente perto, suas cargas se reorganizam (polarização por indução): as cargas de sinal oposto ao do pente ficam mais perto dele e são atraídas com mais força do que as de mesmo sinal são repelidas. Não é magnetismo (A), o papel não estava carregado (C) e prótons não passam de um corpo para outro — quem se move são os elétrons (D)."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Dois corpos inicialmente neutros, um de lã e outro de vidro, são atritados entre si e depois separados. Considerando que nenhuma carga escapa para o ambiente, é correto afirmar que os corpos ficam:",
+          alternativas: [
+            "ambos com carga positiva.",
+            "ambos com carga negativa.",
+            "com cargas de sinais opostos e de mesmo valor.",
+            "com cargas de sinais opostos e de valores diferentes.",
+            "um carregado e o outro neutro."
+          ],
+          correta: "C",
+          justificativa: "No atrito, elétrons passam de um corpo para o outro. Quem perde elétrons fica positivo e quem ganha fica negativo, na mesma quantidade, porque a carga total se conserva: antes era zero e continua zero depois (+Q + (−Q) = 0)."
+        },
+        {
+          fonte: "Estilo vestibular",
+          enunciado: "Três esferas condutoras idênticas: A tem carga +8 μC, B está neutra e C tem carga −2 μC. Encosta-se A em B e separa-se. Em seguida, encosta-se B em C e separa-se. Qual é a carga final da esfera B?",
+          alternativas: ["+4 μC", "+2 μC", "+1 μC", "−1 μC", "zero"],
+          correta: "C",
+          justificativa: "Esferas idênticas em contato dividem a carga total igualmente. 1º contato (A com B): {{+8 + 0|2}} = +4 μC para cada uma. 2º contato (B com C): {{+4 + (−2)|2}} = {{+2|2}} = +1 μC para cada uma. Então B termina com +1 μC. A alternativa A esquece o segundo contato."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Um corpo está eletrizado com carga Q = −3,2 × 10^{−6} C. Sabendo que a carga elementar vale e = 1,6 × 10^{−19} C, esse corpo tem:",
+          alternativas: [
+            "2 × 10^{13} elétrons em excesso.",
+            "2 × 10^{13} elétrons em falta.",
+            "5 × 10^{12} elétrons em excesso.",
+            "2 × 10^{13} prótons em excesso.",
+            "5,12 × 10^{−25} elétrons em excesso."
+          ],
+          correta: "A",
+          justificativa: "Carga negativa quer dizer elétrons a mais. O número de elétrons é n = {{Q|e}} = {{3,2 × 10^{−6}|1,6 × 10^{−19}}} = 2 × 10^{13} elétrons. Na alternativa B o sinal está trocado (falta de elétrons daria carga positiva) e na alternativa E a conta foi feita multiplicando em vez de dividir."
+        },
+        {
+          fonte: "Estilo vestibular",
+          enunciado: "Uma esfera metálica neutra está ligada à terra por um fio. Aproxima-se dela, sem encostar, um bastão eletrizado negativamente. Com o bastão ainda perto, corta-se o fio terra e, depois, afasta-se o bastão. No final, a esfera fica:",
+          alternativas: [
+            "neutra.",
+            "carregada negativamente.",
+            "carregada positivamente.",
+            "com carga negativa de um lado e positiva do outro, mas com total zero.",
+            "com exatamente a mesma carga do bastão."
+          ],
+          correta: "C",
+          justificativa: "É a eletrização por indução. O bastão negativo repele os elétrons livres da esfera, que escoam para a terra pelo fio. Cortando o fio com o bastão ainda perto, esses elétrons não conseguem voltar. Ao afastar o bastão, a esfera fica com falta de elétrons, ou seja, positiva. Na indução, o corpo induzido sempre fica com carga de sinal contrário ao do indutor."
+        },
+        {
+          fonte: "Estilo ENEM",
+          enunciado: "Em postos de combustível, recomenda-se tocar numa parte metálica do veículo antes de pegar a pistola de abastecimento, principalmente em dias secos. Essa recomendação existe para",
+          alternativas: [
+            "esfriar a mão e evitar queimaduras com o combustível.",
+            "descarregar a eletricidade estática acumulada no corpo, evitando uma faísca perto dos vapores de combustível.",
+            "carregar o corpo com cargas positivas para atrair o combustível.",
+            "magnetizar a pistola de abastecimento.",
+            "aumentar a resistência elétrica do corpo."
+          ],
+          correta: "B",
+          justificativa: "Ao andar ou deslizar no banco do carro, o corpo pode se eletrizar por atrito. Se essa carga descarregar de repente na pistola, salta uma faísca, que pode inflamar os vapores do combustível. Tocando antes numa parte metálica, a carga escoa ali, longe dos vapores."
+        }
+      ]
+    },
+    {
+      id: "lei-de-ohm",
+      tema: "Lei de Ohm e código de cores",
+      descricao: "Tensão, corrente, resistência e leitura das faixas",
+      questoes: [
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Um resistor ligado a uma tensão de 12 V é percorrido por uma corrente de 50 mA. O valor da resistência é:",
+          alternativas: ["0,24 Ω", "24 Ω", "240 Ω", "600 Ω", "2 400 Ω"],
+          correta: "C",
+          justificativa: "Pela Lei de Ohm, R = {{V|I}}. Primeiro converta a corrente: 50 mA = 0,05 A. Então R = {{12|0,05}} = 240 Ω. Erros comuns: dividir 12 por 50 sem converter (0,24 Ω) ou multiplicar 12 × 50 (600)."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Um resistor tem as faixas, na ordem: vermelho, violeta, laranja e dourado. Seu valor nominal e sua tolerância são:",
+          alternativas: ["27 Ω ± 5%", "270 Ω ± 5%", "2,7 kΩ ± 5%", "27 kΩ ± 5%", "273 Ω ± 10%"],
+          correta: "D",
+          justificativa: "1ª faixa: vermelho = 2. 2ª faixa: violeta = 7. 3ª faixa (multiplicador): laranja = × 1 000. 4ª faixa: dourado = ± 5%. Então R = 27 × 1 000 = 27 000 Ω = 27 kΩ ± 5%. A terceira faixa não é um algarismo, é o número de zeros."
+        },
+        {
+          fonte: "Estilo vestibular",
+          enunciado: "Um resistor ôhmico ligado a 6 V conduz 0,3 A. Se a tensão aplicada passar para 18 V, a corrente será:",
+          alternativas: ["0,1 A", "0,3 A", "0,6 A", "0,9 A", "1,8 A"],
+          correta: "D",
+          justificativa: "Num resistor ôhmico a resistência não muda. R = {{V|I}} = {{6|0,3}} = 20 Ω. Com 18 V: I = {{V|R}} = {{18|20}} = 0,9 A. Atalho: a tensão triplicou, então a corrente também triplica (0,3 × 3 = 0,9 A)."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Um resistor de 1 kΩ tem tolerância de ± 10%. Uma medição será considerada dentro da tolerância se estiver entre:",
+          alternativas: ["990 Ω e 1 010 Ω", "900 Ω e 1 100 Ω", "1 000 Ω e 1 100 Ω", "950 Ω e 1 050 Ω", "0 Ω e 1 100 Ω"],
+          correta: "B",
+          justificativa: "10% de 1 000 Ω = 0,10 × 1 000 = 100 Ω. Valor mínimo: 1 000 − 100 = 900 Ω. Valor máximo: 1 000 + 100 = 1 100 Ω. A alternativa A usa 1% e a alternativa D usa 5%."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Qual sequência de cores (três primeiras faixas) corresponde a um resistor de 470 Ω?",
+          alternativas: [
+            "amarelo, violeta, preto",
+            "amarelo, violeta, marrom",
+            "amarelo, violeta, vermelho",
+            "laranja, violeta, marrom",
+            "violeta, amarelo, marrom"
+          ],
+          correta: "B",
+          justificativa: "470 = 47 × 10. Amarelo = 4, violeta = 7 e o multiplicador × 10 é o marrom (um zero). Amarelo-violeta-preto daria 47 Ω e amarelo-violeta-vermelho daria 4 700 Ω (4,7 kΩ). Na alternativa E a ordem está invertida (740 Ω)."
+        },
+        {
+          fonte: "Estilo ENEM",
+          enunciado: "Dois resistores, um de 10 Ω e outro de 20 Ω, são ligados, cada um separadamente, à mesma fonte de 12 V. Comparando as correntes, é correto afirmar que:",
+          alternativas: [
+            "a corrente é a mesma nos dois, porque a tensão é a mesma.",
+            "o de 20 Ω conduz o dobro da corrente do de 10 Ω.",
+            "o de 10 Ω conduz o dobro da corrente do de 20 Ω.",
+            "o de 10 Ω conduz metade da corrente do de 20 Ω.",
+            "nenhum dos dois conduz corrente."
+          ],
+          correta: "C",
+          justificativa: "Com a mesma tensão, quanto menor a resistência, maior a corrente. I_{10} = {{12|10}} = 1,2 A e I_{20} = {{12|20}} = 0,6 A. Como 1,2 = 2 × 0,6, o resistor de 10 Ω conduz o dobro."
+        }
+      ]
+    },
+    {
+      id: "associacao-e-potencia",
+      tema: "associação de resistores e potência",
+      descricao: "Série, paralelo, mista e potência elétrica",
+      questoes: [
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Três resistores de 100 Ω, 220 Ω e 330 Ω estão ligados em série a uma fonte de 13 V. A corrente no circuito é:",
+          alternativas: ["2 mA", "20 mA", "50 mA", "130 mA", "200 mA"],
+          correta: "B",
+          justificativa: "Em série, as resistências se somam: R_{eq} = 100 + 220 + 330 = 650 Ω. Pela Lei de Ohm: I = {{V|R_{eq}}} = {{13|650}} = 0,02 A = 20 mA."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Três resistores de 60 Ω, 60 Ω e 30 Ω estão ligados em paralelo. A resistência equivalente é:",
+          alternativas: ["7,5 Ω", "15 Ω", "30 Ω", "50 Ω", "150 Ω"],
+          correta: "B",
+          justificativa: "Os dois de 60 Ω em paralelo valem {{60|2}} = 30 Ω. Esses 30 Ω em paralelo com o outro de 30 Ω dão {{30|2}} = 15 Ω. Conferindo pela fórmula geral: {{1|R_{eq}}} = {{1|60}} + {{1|60}} + {{1|30}} = {{4|60}}, então R_{eq} = 15 Ω. Lembre: em paralelo o resultado é sempre menor que o menor resistor. 150 Ω seria a soma (série)."
+        },
+        {
+          fonte: "Estilo vestibular",
+          enunciado: "Um resistor de 10 Ω está em série com um conjunto de dois resistores de 20 Ω ligados em paralelo. O circuito é alimentado por 40 V. A corrente em cada resistor de 20 Ω é:",
+          alternativas: ["0,5 A", "1 A", "1,33 A", "2 A", "4 A"],
+          correta: "B",
+          justificativa: "1) Paralelo de dois resistores iguais: {{20|2}} = 10 Ω. 2) Somando o resistor em série: R_{eq} = 10 + 10 = 20 Ω. 3) Corrente total: I = {{40|20}} = 2 A. 4) Essa corrente se divide igualmente entre os dois ramos iguais: {{2|2}} = 1 A em cada. A alternativa D é a corrente total, não a de cada ramo."
+        },
+        {
+          fonte: "Estilo ENEM",
+          enunciado: "Um chuveiro elétrico tem na embalagem a indicação 5 500 W – 220 V. Ligado corretamente, a corrente elétrica que percorre o chuveiro é de:",
+          alternativas: ["0,04 A", "4 A", "25 A", "250 A", "1 210 000 A"],
+          correta: "C",
+          justificativa: "A potência é P = V · I, então I = {{P|V}} = {{5 500|220}} = 25 A. A alternativa A é a conta invertida ({{220|5 500}}) e a alternativa E multiplica em vez de dividir. É por causa de correntes altas assim que o chuveiro precisa de fio mais grosso e disjuntor próprio."
+        },
+        {
+          fonte: "Estilo ENEM",
+          enunciado: "Um chuveiro elétrico ligado em 220 V tem uma chave “verão/inverno”. Para que a água saia mais quente (posição inverno), a resistência ligada pela chave deve ser:",
+          alternativas: [
+            "maior, porque mais resistência sempre gera mais calor.",
+            "menor, porque com a mesma tensão a corrente e a potência aumentam.",
+            "igual; a chave só muda a quantidade de água.",
+            "maior, para diminuir a corrente e economizar energia.",
+            "zero, fazendo um curto-circuito proposital."
+          ],
+          correta: "B",
+          justificativa: "Na tomada, o que fica fixo é a tensão (220 V). Com V fixo, P = {{V^{2}|R}}: quanto menor a resistência, maior a potência e mais quente a água. A alternativa A é o erro clássico: “mais resistência, mais calor” só valeria se a corrente fosse mantida fixa (P = R · I^{2}), o que não acontece na tomada. A alternativa E seria um curto-circuito, que desarma o disjuntor."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Um resistor de 100 Ω é percorrido por uma corrente de 0,2 A. A potência dissipada nele é:",
+          alternativas: ["0,4 W", "2 W", "4 W", "20 W", "40 W"],
+          correta: "C",
+          justificativa: "P = R · I^{2} = 100 × 0,2^{2} = 100 × 0,04 = 4 W. Outra forma: V = R · I = 100 × 0,2 = 20 V e P = V · I = 20 × 0,2 = 4 W. A alternativa D esquece de elevar a corrente ao quadrado (100 × 0,2 = 20)."
+        }
+      ]
+    },
+    {
+      id: "capacitores",
+      tema: "capacitores",
+      descricao: "Carga, associação, reatância capacitiva e defasagem",
+      questoes: [
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Um capacitor de 100 μF é ligado a uma fonte de 12 V. Depois de carregado, a carga armazenada é:",
+          alternativas: ["8,33 μC", "120 μC", "1,2 mC", "12 mC", "1 200 C"],
+          correta: "C",
+          justificativa: "Q = C · V. Convertendo: 100 μF = 100 × 10^{−6} F. Q = 100 × 10^{−6} × 12 = 1 200 × 10^{−6} C = 1,2 × 10^{−3} C = 1,2 mC. A alternativa E esquece de converter os microfarads."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Três capacitores de 10 μF, 20 μF e 30 μF estão associados em paralelo. A capacitância equivalente é:",
+          alternativas: ["5,45 μF", "10 μF", "20 μF", "60 μF", "6 000 μF"],
+          correta: "D",
+          justificativa: "Em paralelo, as capacitâncias se somam (o contrário dos resistores): C_{eq} = 10 + 20 + 30 = 60 μF. A alternativa A (5,45 μF) seria o resultado em série."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Dois capacitores, de 6 μF e 3 μF, estão associados em série. A capacitância equivalente é:",
+          alternativas: ["0,5 μF", "2 μF", "4,5 μF", "9 μF", "18 μF"],
+          correta: "B",
+          justificativa: "Em série, para dois capacitores, usa-se produto pela soma: C_{eq} = {{6 × 3|6 + 3}} = {{18|9}} = 2 μF. Em série, o resultado é sempre menor que o menor capacitor. 9 μF seria a soma (paralelo)."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Um capacitor de 100 μF está ligado à rede de 60 Hz. Sua reatância capacitiva é, aproximadamente:",
+          alternativas: ["0,0377 Ω", "2,65 Ω", "26,5 Ω", "37,7 Ω", "265 Ω"],
+          correta: "C",
+          justificativa: "X_{C} = {{1|2 · π · f · C}} = {{1|2 × 3,14 × 60 × 100 × 10^{−6}}} = {{1|0,0377}} ≈ 26,5 Ω. A alternativa A é só o denominador, sem fazer o “1 dividido por”."
+        },
+        {
+          fonte: "Estilo vestibular",
+          enunciado: "Se a frequência da tensão aplicada a um capacitor dobrar, sua reatância capacitiva:",
+          alternativas: ["dobra.", "cai pela metade.", "não muda.", "quadruplica.", "vai a zero."],
+          correta: "B",
+          justificativa: "Na fórmula X_{C} = {{1|2 · π · f · C}}, a frequência está no denominador. Dobrando f, o denominador dobra e X_{C} cai pela metade. Por isso o capacitor deixa passar mais facilmente as frequências altas."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Num circuito de corrente alternada com um capacitor ideal, a relação de fase entre tensão e corrente é:",
+          alternativas: [
+            "a tensão está adiantada 90° em relação à corrente.",
+            "a corrente está adiantada 90° em relação à tensão.",
+            "tensão e corrente estão em fase.",
+            "a corrente está adiantada 180° em relação à tensão.",
+            "a tensão está adiantada 45° em relação à corrente."
+          ],
+          correta: "B",
+          justificativa: "Lembre do CIVIL: no C, o I vem antes do V. No capacitor a corrente chega primeiro (ela é que carrega o capacitor) e a tensão vem depois: a corrente está adiantada 90°. A alternativa A descreve o indutor, e a alternativa C descreve o resistor."
+        },
+        {
+          fonte: "Estilo ENEM",
+          enunciado: "O flash de muitas câmeras fotográficas funciona com pilhas comuns, mas produz um clarão muito intenso em uma fração de segundo. Isso é possível porque o circuito do flash tem um capacitor que",
+          alternativas: [
+            "transforma a luz do ambiente em energia elétrica.",
+            "armazena carga elétrica aos poucos e a libera de uma só vez na lâmpada.",
+            "funciona como uma pilha extra, gerando energia continuamente.",
+            "impede para sempre a passagem de corrente para a lâmpada.",
+            "funciona como um resistor que esquenta e brilha."
+          ],
+          correta: "B",
+          justificativa: "O capacitor é carregado lentamente pelas pilhas (por isso há uma espera entre um flash e outro) e, no disparo, descarrega toda essa carga de uma vez na lâmpada, produzindo um pulso de corrente muito maior do que as pilhas dariam sozinhas. O capacitor não gera energia (C): só armazena e devolve."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Um capacitor está ligado a uma fonte de tensão contínua (CC). Depois de completamente carregado, ele se comporta como:",
+          alternativas: ["um curto-circuito.", "um circuito aberto.", "um resistor de valor igual à sua reatância.", "um indutor.", "uma fonte de corrente alternada."],
+          correta: "B",
+          justificativa: "Enquanto carrega, há corrente. Quando a tensão no capacitor fica igual à da fonte, a corrente para: em CC, o capacitor carregado bloqueia a corrente e funciona como um circuito aberto. Pela fórmula, em CC f = 0 e X_{C} fica infinitamente grande."
+        }
+      ]
+    },
+    {
+      id: "indutores",
+      tema: "indutores",
+      descricao: "Associação, reatância indutiva e o CIVIL",
+      questoes: [
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Um indutor de 0,1 H está ligado à rede de 60 Hz. Sua reatância indutiva é, aproximadamente:",
+          alternativas: ["0,0265 Ω", "6 Ω", "37,7 Ω", "377 Ω", "3 770 Ω"],
+          correta: "C",
+          justificativa: "X_{L} = 2 · π · f · L = 2 × 3,14 × 60 × 0,1 = 37,68 ≈ 37,7 Ω. A alternativa B esquece o 2 · π (60 × 0,1 = 6)."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Dois indutores iguais, de 40 mH cada, estão associados em paralelo. A indutância equivalente é:",
+          alternativas: ["10 mH", "20 mH", "40 mH", "80 mH", "1 600 mH"],
+          correta: "B",
+          justificativa: "Indutores se associam do mesmo jeito que resistores. Dois iguais em paralelo: {{40|2}} = 20 mH. 80 mH seria a ligação em série."
+        },
+        {
+          fonte: "Estilo vestibular",
+          enunciado: "Um indutor de 10 mH está em série com um conjunto de dois indutores de 30 mH ligados em paralelo. A indutância equivalente é:",
+          alternativas: ["15 mH", "25 mH", "40 mH", "70 mH", "7,5 mH"],
+          correta: "B",
+          justificativa: "1) Paralelo de dois iguais: {{30|2}} = 15 mH. 2) Somando o de 10 mH em série: L_{eq} = 10 + 15 = 25 mH. A alternativa D somou tudo como se estivesse tudo em série."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Num circuito de corrente alternada com um indutor ideal:",
+          alternativas: [
+            "a tensão está adiantada 90° em relação à corrente.",
+            "a corrente está adiantada 90° em relação à tensão.",
+            "tensão e corrente estão em fase.",
+            "a tensão está atrasada 180° em relação à corrente.",
+            "não existe defasagem, porque o indutor só funciona em CC."
+          ],
+          correta: "A",
+          justificativa: "CIVIL: no L, o V vem antes do I. O indutor “segura” a variação da corrente, então a tensão aparece primeiro e a corrente vem 90° depois. A alternativa B descreve o capacitor."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Em corrente contínua, depois que a corrente se estabiliza, um indutor ideal se comporta como:",
+          alternativas: ["um circuito aberto.", "um curto-circuito.", "um capacitor.", "um resistor de valor muito alto.", "uma fonte de tensão."],
+          correta: "B",
+          justificativa: "O indutor só se opõe à variação da corrente. Em CC estável a corrente não varia, então não há oposição: o indutor ideal vira um simples fio, um curto-circuito. Pela fórmula, com f = 0, X_{L} = 2 · π · 0 · L = 0 Ω. (Um indutor real ainda tem a pequena resistência do fio da bobina.)"
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Uma bobina com reatância indutiva de 40 Ω (resistência desprezível) é ligada a 120 V. A corrente que circula é:",
+          alternativas: ["0,33 A", "3 A", "80 A", "160 A", "4 800 A"],
+          correta: "B",
+          justificativa: "A reatância funciona como a “resistência” do indutor em CA, então vale a Lei de Ohm: I = {{V|X_{L}}} = {{120|40}} = 3 A. A alternativa A é a conta invertida ({{40|120}})."
+        },
+        {
+          fonte: "Estilo vestibular",
+          enunciado: "Um indutor tem reatância de 50 Ω em 60 Hz. Ligado em 120 Hz, sua reatância passa a ser:",
+          alternativas: ["25 Ω", "50 Ω", "100 Ω", "200 Ω", "0 Ω"],
+          correta: "C",
+          justificativa: "X_{L} = 2 · π · f · L: a frequência está multiplicando. Se f dobra (60 → 120 Hz), X_{L} também dobra: 50 × 2 = 100 Ω. É o comportamento oposto ao do capacitor."
+        }
+      ]
+    },
+    {
+      id: "circuito-rlc",
+      tema: "circuito RLC",
+      descricao: "Impedância, tensões defasadas e ressonância",
+      questoes: [
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Um circuito RLC série tem R = 30 Ω, X_{L} = 60 Ω e X_{C} = 20 Ω. A impedância do circuito é:",
+          alternativas: ["10 Ω", "36 Ω", "50 Ω", "70 Ω", "110 Ω"],
+          correta: "C",
+          justificativa: "1) A reatância resultante é X = X_{L} − X_{C} = 60 − 20 = 40 Ω. 2) Pelo triângulo (Pitágoras): Z = √{R^{2} + X^{2}} = √{30^{2} + 40^{2}} = √{900 + 1 600} = √{2 500} = 50 Ω. Erros comuns: somar tudo (110 Ω) ou somar R com X direto (70 Ω)."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Um circuito RLC série tem impedância de 50 Ω e é ligado a uma fonte de 100 V. A corrente no circuito é:",
+          alternativas: ["0,5 A", "2 A", "50 A", "150 A", "5 000 A"],
+          correta: "B",
+          justificativa: "Em CA, a impedância faz o papel da resistência na Lei de Ohm: I = {{V|Z}} = {{100|50}} = 2 A."
+        },
+        {
+          fonte: "Estilo vestibular",
+          enunciado: "Num circuito RLC série, um técnico mede V_{R} = 40 V, V_{L} = 50 V e V_{C} = 20 V. A tensão da fonte é:",
+          alternativas: ["10 V", "30 V", "50 V", "70 V", "110 V"],
+          correta: "C",
+          justificativa: "As tensões estão defasadas, então não se somam direto. 1) V_{L} e V_{C} são opostas: 50 − 20 = 30 V. 2) Combina com V_{R} por Pitágoras: V = √{V_{R}^{2} + (V_{L} − V_{C})^{2}} = √{40^{2} + 30^{2}} = √{1 600 + 900} = √{2 500} = 50 V. Somar tudo (110 V) é o erro mais comum."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Um circuito RLC série está em ressonância. Nessa condição:",
+          alternativas: [
+            "X_{L} = X_{C}, a impedância fica igual a R e a corrente é máxima.",
+            "X_{L} = X_{C}, a impedância fica máxima e a corrente é mínima.",
+            "R = 0 e a corrente é zero.",
+            "X_{L} = R e a tensão no capacitor é zero.",
+            "a impedância é a soma R + X_{L} + X_{C}."
+          ],
+          correta: "A",
+          justificativa: "Na ressonância, X_{L} = X_{C}, então X_{L} − X_{C} = 0 e Z = √{R^{2} + 0} = R. Como Z fica no menor valor possível, a corrente I = {{V|R}} é a maior possível."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Num circuito RLC série, X_{L} = 80 Ω e X_{C} = 30 Ω. O circuito tem comportamento:",
+          alternativas: [
+            "resistivo, com corrente em fase com a tensão.",
+            "indutivo, com a corrente atrasada em relação à tensão.",
+            "capacitivo, com a corrente adiantada em relação à tensão.",
+            "indutivo, com a corrente adiantada em relação à tensão.",
+            "capacitivo, com a corrente atrasada em relação à tensão."
+          ],
+          correta: "B",
+          justificativa: "Como X_{L} > X_{C}, sobra reatância indutiva (80 − 30 = 50 Ω) e o circuito se comporta como indutivo. Pelo CIVIL, no indutor a tensão vem antes, então a corrente fica atrasada em relação à tensão."
+        },
+        {
+          fonte: "Estilo vestibular",
+          enunciado: "Um circuito RLC série tem L = 10 mH e C = 10 μF. Sua frequência de ressonância é, aproximadamente:",
+          alternativas: ["60 Hz", "159 Hz", "503 Hz", "1 000 Hz", "5 030 Hz"],
+          correta: "C",
+          justificativa: "f_{0} = {{1|2 · π · √{L · C}}}. 1) L · C = 0,01 × 10 × 10^{−6} = 10^{−7}. 2) √{10^{−7}} ≈ 3,16 × 10^{−4}. 3) 2 × 3,14 × 3,16 × 10^{−4} ≈ 1,99 × 10^{−3}. 4) f_{0} = {{1|1,99 × 10^{−3}}} ≈ 503 Hz."
+        },
+        {
+          fonte: "Estilo concurso",
+          enunciado: "Um circuito RLC série com R = 10 Ω é ligado a 20 V, na frequência de ressonância. A corrente no circuito é:",
+          alternativas: ["0,5 A", "1 A", "2 A", "20 A", "200 A"],
+          correta: "C",
+          justificativa: "Na ressonância, X_{L} = X_{C} e a impedância fica igual a R: Z = 10 Ω. Então I = {{V|Z}} = {{20|10}} = 2 A, que é a maior corrente que esse circuito consegue ter."
+        }
+      ]
+    }
+  ]
+};
 /* ===================== FIM DA LISTA — não precisa mexer abaixo ===================== */
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 (function(){
   var raiz = document.getElementById("raiz");
-  var estado = { turma: null, projetar: false, aviso: "", avisoTipo: "" };
+  var estado = { turma: null, desafio: null, respostas: {}, ordem: {}, corrigido: false, filtro: "erradas", faltando: false, projetar: false, aviso: "" };
   function esc(s){ return String(s == null ? "" : s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  /* texto com frações, expoentes, índices e raiz */
+  function fmt(s){
+    var h = esc(s);
+    h = h.replace(/\^\{([^{}]*)\}/g, "<sup>$1</sup>");
+    h = h.replace(/_\{([^{}]*)\}/g, "<sub>$1</sub>");
+    h = h.replace(/√\{([^{}]*)\}/g, '<span class="rz">√<span>$1</span></span>');
+    var antes;
+    do { antes = h; h = h.replace(/\{\{([^{}|]*)\|([^{}]*)\}\}/g, '<span class="fr"><span>$1</span><span>$2</span></span>'); } while (h !== antes);
+    return h;
+  }
   function seguro(u){ u = String(u || "").trim(); if (/^https?:\/\//i.test(u)) return u; return /^[A-Za-z0-9][A-Za-z0-9._\/-]*$/.test(u) && u.indexOf("..") < 0 ? u : ""; }
   function ehArquivo(u){ return !/^https?:\/\//i.test(u); }
   function pad(n){ return n < 10 ? "0" + n : String(n); }
   function lerLocal(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
   function gravarLocal(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+  var LETRAS = "ABCDEFGH";
   function turmaAtual(){ for (var i=0;i<DADOS.turmas.length;i++) if (DADOS.turmas[i].id === estado.turma) return DADOS.turmas[i]; return null; }
+  function desafiosDa(t){ return (t && typeof DESAFIOS !== "undefined" && DESAFIOS[t.id]) || []; }
+  function desafioAtual(){ var t = turmaAtual(), l = desafiosDa(t); for (var i=0;i<l.length;i++) if (l[i].id === estado.desafio) return l[i]; return null; }
   function linkTurma(t){ return location.href.replace(/#.*$/, "") + "#" + t.id; }
+  function chaveResultado(t, d){ return "resultado:" + t.id + ":" + d.id; }
+  function idxCorreta(q){ return LETRAS.indexOf(String(q.correta || "").trim().toUpperCase()); }
+  /* embaralha a ordem das alternativas a cada tentativa (a letra "correta" do arquivo continua valendo) */
+  function embaralhar(d){
+    estado.ordem = {};
+    (d ? d.questoes : []).forEach(function(q, i){
+      var o = (q.alternativas || []).map(function(_, j){ return j; });
+      for (var k = o.length - 1; k > 0; k--) { var r = Math.floor(Math.random() * (k + 1)), x = o[k]; o[k] = o[r]; o[r] = x; }
+      estado.ordem[i] = o;
+    });
+  }
+  function ordemDe(i, q){ return estado.ordem[i] || (q.alternativas || []).map(function(_, j){ return j; }); }
+  function letraDe(i, q, j){ var p = ordemDe(i, q).indexOf(j); return p < 0 ? "?" : LETRAS.charAt(p); }
+  function remapear(txt, i, q){
+    return String(txt || "").replace(/alternativa ([A-H])\b/g, function(_, L){ return "alternativa " + letraDe(i, q, LETRAS.indexOf(L)); })
+      .replace(/\(([A-H])\)/g, function(_, L){ return "(" + letraDe(i, q, LETRAS.indexOf(L)) + ")"; });
+  }
 
-  function escolher(){
+  function lerHash(){
+    var partes = decodeURIComponent((location.hash || "").slice(1)).split("/");
     var ids = DADOS.turmas.map(function(t){ return t.id; });
-    var h = decodeURIComponent((location.hash || "").slice(1));
-    if (ids.indexOf(h) >= 0) return h;
-    var l = lerLocal("turma");
-    if (l && ids.indexOf(l) >= 0) return l;
-    return ids[0] || null;
+    var turma = ids.indexOf(partes[0]) >= 0 ? partes[0] : null;
+    if (!turma) { var l = lerLocal("turma"); turma = l && ids.indexOf(l) >= 0 ? l : (ids[0] || null); }
+    estado.turma = turma;
+    estado.desafio = (partes[1] === "desafio" && partes[2]) ? partes[2] : null;
+    if (estado.desafio && !desafioAtual()) estado.desafio = null;
+  }
+
+  function cabecalho(compacto){
+    var h = '<header class="topo"><p class="rotulo">Instrutora · Elétrica e automação</p><h1>Profa. ' + esc(DADOS.professora) + '</h1>' +
+      (!compacto && DADOS.apresentacao ? '<p class="intro">' + esc(DADOS.apresentacao) + '</p>' : '') + '</header>';
+    if (DADOS.turmas.length > 1 && !compacto) {
+      h += '<nav class="turmas" aria-label="Turmas">';
+      DADOS.turmas.forEach(function(x){
+        var at = x.id === estado.turma;
+        h += '<a class="chip' + (at ? ' ativo' : '') + '" href="#' + esc(x.id) + '"' + (at ? ' aria-current="page"' : '') + '>' + esc(x.nome) + '</a>';
+      });
+      h += '</nav>';
+    }
+    return h;
+  }
+
+  function telaTurma(t){
+    var h = '<section class="turma" aria-labelledby="titulo-turma"><div class="turma-cab">' +
+      (t.curso ? '<p class="rotulo">' + esc(t.curso) + '</p>' : '') +
+      '<h2 id="titulo-turma">' + esc(t.nome) + '</h2>' +
+      (t.unidade ? '<p class="uc">' + esc(t.unidade) + '</p>' : '') + '</div>';
+    if (!t.aulas || !t.aulas.length) h += '<p class="vazio">As aulas desta turma vão aparecer aqui.</p>';
+    else {
+      h += '<ol class="aulas">';
+      t.aulas.forEach(function(a, i){
+        var link = seguro(a.link), pdf = seguro(a.pdf), ultima = i === t.aulas.length - 1;
+        h += '<li class="aula"><span class="num">Aula ' + pad(i + 1) + '</span><div class="aula-texto"><h3>' + esc(a.titulo) +
+          (ultima ? '<span class="novidade">Mais recente</span>' : '') + '</h3>' +
+          (a.descricao ? '<p>' + esc(a.descricao) + '</p>' : '') + (a.data ? '<p class="data">' + esc(a.data) + '</p>' : '') +
+          '</div><div class="acoes">' +
+          (link ? '<a class="botao" href="' + esc(link) + '" target="_blank" rel="noopener">Abrir aula</a>' : '') +
+          (link && ehArquivo(link) ? '<a class="botao sec" href="' + esc(link) + '" download>Baixar</a>' : '') +
+          (pdf ? '<a class="botao sec" href="' + esc(pdf) + '" target="_blank" rel="noopener">Baixar material</a>' : '') +
+          '</div></li>';
+      });
+      h += '</ol>';
+    }
+    h += '</section>';
+
+    var ds = desafiosDa(t);
+    if (ds.length) {
+      h += '<section class="turma" aria-labelledby="titulo-desafios"><div class="secao-cab"><p class="rotulo">Desafios</p>' +
+        '<h2 id="titulo-desafios">Teste seus conhecimentos</h2>' +
+        '<p>Questões no estilo do ENEM, de vestibulares e de concursos. Responda tudo e veja na hora quanto acertou, a resposta certa e o porquê.</p></div><ul class="desafios">';
+      ds.forEach(function(d){
+        var r = lerLocal(chaveResultado(t, d)), n = (d.questoes || []).length;
+        var selo = r !== null && r !== "" ? '<span class="selo' + (+r < 60 ? ' baixo' : '') + '">Último: ' + esc(r) + '%</span>' : '';
+        h += '<li><a class="cartao-desafio" href="#' + esc(t.id) + '/desafio/' + esc(d.id) + '">' +
+          '<span class="chamada">Teste seus conhecimentos sobre ' + esc(d.tema) + '</span>' +
+          (d.descricao ? '<span class="det">' + esc(d.descricao) + '</span>' : '<span class="det"></span>') +
+          '<span class="rodape-c"><span>' + n + (n === 1 ? ' questão' : ' questões') + '</span>' + selo + '</span></a></li>';
+      });
+      h += '</ul></section>';
+    }
+
+    h += '<div class="rodape"><button type="button" class="link-discreto" data-acao="projetar">Mostrar QR code desta turma</button></div>';
+    if (estado.projetar) {
+      h += '<div class="projecao" role="dialog" aria-modal="true" aria-label="QR code da turma"><button type="button" class="fechar" data-acao="fechar">Fechar</button>' +
+        '<h2>' + esc(t.nome) + '</h2><div class="qr" id="qr"></div><p>Aponte a câmera do celular para abrir as aulas da turma</p>' +
+        '<p style="font-size:15px;word-break:break-all">' + esc(linkTurma(t)) + '</p>' +
+        '<button type="button" class="botao leve" data-acao="copiar" style="color:#16232C;border-color:#C9D0CC">Copiar link</button>' +
+        (estado.aviso ? '<p role="status" style="font-size:15px">' + esc(estado.aviso) + '</p>' : '') + '</div>';
+    }
+    return h;
+  }
+
+  function contar(d){
+    var acertos = 0, respondidas = 0;
+    d.questoes.forEach(function(q, i){
+      if (estado.respostas[i] != null) respondidas++;
+      if (estado.respostas[i] === idxCorreta(q)) acertos++;
+    });
+    return { acertos: acertos, respondidas: respondidas, total: d.questoes.length };
+  }
+
+  function telaDesafio(t, d){
+    var c = contar(d), h = '<a class="voltar" href="#' + esc(t.id) + '">← Voltar para ' + esc(t.nome) + '</a>';
+    h += '<div class="secao-cab"><p class="rotulo">Desafio · ' + c.total + ' questões</p><h2 id="topo-desafio" tabindex="-1">Teste seus conhecimentos sobre ' + esc(d.tema) + '</h2>' +
+      (d.descricao ? '<p>' + esc(d.descricao) + '</p>' : '') + '</div>';
+
+    if (estado.corrigido) {
+      var pct = Math.round(100 * c.acertos / (c.total || 1));
+      var erros = c.total - c.acertos;
+      var msg = pct === 100 ? "Gabaritou! Mandou muito bem." : pct >= 80 ? "Muito bom! Confira só o que faltou." : pct >= 60 ? "Bom caminho. Revise as que errou." : "Vale revisar a aula e tentar de novo.";
+      h += '<div class="placar" role="status"><span class="pct ' + (pct >= 60 ? 'bom' : 'baixo') + '">' + pct + '%</span><div class="placar-texto">' +
+        '<span class="msg">' + msg + '</span><span>' + c.acertos + ' de ' + c.total + ' certas' + (erros ? ' · ' + erros + (erros === 1 ? ' errada' : ' erradas') : '') + '</span>' +
+        '<div class="barra" aria-hidden="true"><span style="width:' + pct + '%"></span></div></div></div>';
+      h += '<div class="filtro" role="group" aria-label="Mostrar">' +
+        '<button type="button" class="chip' + (estado.filtro === "erradas" ? ' ativo' : '') + '" data-acao="filtro" data-valor="erradas"' + (erros ? '' : ' disabled') + '>Só as que errei (' + erros + ')</button>' +
+        '<button type="button" class="chip' + (estado.filtro === "todas" ? ' ativo' : '') + '" data-acao="filtro" data-valor="todas">Todas as questões</button></div>';
+    }
+
+    h += '<ol class="questoes">';
+    d.questoes.forEach(function(q, i){
+      var marcada = estado.respostas[i], certa = idxCorreta(q), acertou = marcada === certa;
+      if (estado.corrigido && estado.filtro === "erradas" && acertou && c.acertos < c.total) return;
+      var classe = estado.corrigido ? (acertou ? ' certa' : ' errada') : '';
+      h += '<li class="questao' + classe + '" id="q' + i + '"><div class="q-cab"><span class="q-num">Questão ' + pad(i + 1) + '</span>' +
+        (q.fonte ? '<span class="q-fonte">' + esc(q.fonte) + '</span>' : '') + '</div>' +
+        '<p class="enunciado" id="enun' + i + '">' + fmt(q.enunciado) + '</p>' +
+        '<fieldset class="alts" aria-labelledby="enun' + i + '">';
+      ordemDe(i, q).forEach(function(j, pos){
+        var a = q.alternativas[j], cl = 'alt';
+        var marca = '';
+        if (estado.corrigido) {
+          cl += ' fixa';
+          if (j === certa) { cl += ' e-certa'; marca = j === marcada ? 'Sua resposta · correta' : 'Resposta correta'; }
+          else if (j === marcada) { cl += ' e-errada'; marca = 'Sua resposta'; }
+        } else if (j === marcada) cl += ' marcada';
+        h += '<label class="' + cl + '"><input type="radio" name="q' + i + '" value="' + j + '"' + (j === marcada ? ' checked' : '') + (estado.corrigido ? ' disabled' : '') + ' data-q="' + i + '">' +
+          '<span class="letra">' + LETRAS.charAt(pos) + '</span><span>' + fmt(a) + (marca ? '<span class="marca">' + marca + '</span>' : '') + '</span></label>';
+      });
+      h += '</fieldset>';
+      if (estado.corrigido) {
+        h += '<p class="veredito ' + (acertou ? 'ok">Você acertou.' : 'erro">' + (marcada == null ? 'Sem resposta.' : 'Você marcou ' + letraDe(i, q, marcada) + '.') + ' A correta é a ' + letraDe(i, q, certa) + '.') + '</p>' +
+          '<div class="justificativa"><strong>Por que a ' + letraDe(i, q, certa) + ' está certa</strong><p>' + fmt(remapear(q.justificativa, i, q)) + '</p></div>';
+      }
+      h += '</li>';
+    });
+    h += '</ol>';
+
+    if (!estado.corrigido) {
+      var falta = c.total - c.respondidas;
+      h += '<div class="envio"><button type="button" class="botao" data-acao="corrigir">Ver meu resultado</button><span class="aviso' + (estado.faltando && falta ? ' erro' : '') + '" role="status">' +
+        (falta ? (estado.faltando ? 'Ainda falta' + (falta === 1 ? ' 1 questão' : 'm ' + falta + ' questões') + ' para responder.' : c.respondidas + ' de ' + c.total + ' respondidas') : 'Tudo respondido!') + '</span></div>';
+    } else {
+      h += '<div class="linha-botoes"><button type="button" class="botao" data-acao="refazer">Refazer este desafio</button><a class="botao sec" href="#' + esc(t.id) + '">Outros desafios</a></div>';
+    }
+    return h;
   }
 
   function render(){
-    var t = turmaAtual();
-    var h = '<header class="topo"><p class="rotulo">Instrutora · Elétrica e automação</p><h1>Profa. ' + esc(DADOS.professora) + '</h1>' +
-      (DADOS.apresentacao ? '<p class="intro">' + esc(DADOS.apresentacao) + '</p>' : '') + '</header>';
-    h += '<nav class="turmas" aria-label="Turmas">';
-    DADOS.turmas.forEach(function(x){
-      var at = t && x.id === t.id;
-      h += '<a class="chip' + (at ? ' ativo' : '') + '" href="#' + esc(x.id) + '"' + (at ? ' aria-current="page"' : '') + '>' + esc(x.nome) + '</a>';
-    });
-    h += '</nav>';
-    if (!t) { h += '<p class="vazio">Nenhuma turma cadastrada ainda.</p>'; }
-    else {
-      h += '<section class="turma" aria-labelledby="titulo-turma"><div class="turma-cab">' +
-        (t.curso ? '<p class="rotulo">' + esc(t.curso) + '</p>' : '') +
-        '<h2 id="titulo-turma">' + esc(t.nome) + '</h2>' +
-        (t.unidade ? '<p class="uc">' + esc(t.unidade) + '</p>' : '') + '</div>';
-      if (!t.aulas || !t.aulas.length) h += '<p class="vazio">As aulas desta turma vão aparecer aqui.</p>';
-      else {
-        h += '<ol class="aulas">';
-        t.aulas.forEach(function(a, i){
-          var link = seguro(a.link), pdf = seguro(a.pdf), ultima = i === t.aulas.length - 1;
-          h += '<li class="aula"><span class="num">Aula ' + pad(i + 1) + '</span><div class="aula-texto"><h3>' + esc(a.titulo) +
-            (ultima ? '<span class="novidade">Mais recente</span>' : '') + '</h3>' +
-            (a.descricao ? '<p>' + esc(a.descricao) + '</p>' : '') + (a.data ? '<p class="data">' + esc(a.data) + '</p>' : '') +
-            '</div><div class="acoes">' +
-            (link ? '<a class="botao" href="' + esc(link) + '" target="_blank" rel="noopener">Abrir aula</a>' : '') +
-            (link && ehArquivo(link) ? '<a class="botao sec" href="' + esc(link) + '" download>Baixar</a>' : '') +
-            (pdf ? '<a class="botao sec" href="' + esc(pdf) + '" target="_blank" rel="noopener">Baixar material</a>' : '') +
-            '</div></li>';
-        });
-        h += '</ol>';
-      }
-      h += '</section>';
-      h += '<div class="rodape"><button type="button" class="link-discreto" data-acao="projetar">Mostrar QR code desta turma</button></div>';
-      if (estado.projetar) {
-        h += '<div class="projecao" role="dialog" aria-modal="true" aria-label="QR code da turma"><button type="button" class="fechar" data-acao="fechar">Fechar</button>' +
-          '<h2>' + esc(t.nome) + '</h2><div class="qr" id="qr"></div><p>Aponte a câmera do celular para abrir as aulas da turma</p>' +
-          '<p style="font-size:15px;word-break:break-all">' + esc(linkTurma(t)) + '</p>' +
-          '<button type="button" class="botao leve" data-acao="copiar" style="color:#16232C;border-color:#C9D0CC">Copiar link</button>' +
-          (estado.aviso ? '<p role="status" style="font-size:15px">' + esc(estado.aviso) + '</p>' : '') + '</div>';
-      }
-    }
+    var t = turmaAtual(), d = desafioAtual();
+    var h = cabecalho(!!d);
+    if (!t) h += '<p class="vazio">Nenhuma turma cadastrada ainda.</p>';
+    else h += d ? telaDesafio(t, d) : telaTurma(t);
     raiz.innerHTML = h;
     var qr = document.getElementById("qr");
     if (qr && t) {
@@ -260,25 +862,65 @@ var DADOS = {
         catch(e){ qr.textContent = "Não foi possível gerar o QR code."; }
       } else { qr.style.lineHeight = "1.4"; qr.textContent = "QR code indisponível agora. Use o link abaixo."; }
     }
-    document.title = (t ? t.nome + " · " : "") + "Aulas da Profa. " + DADOS.professora;
+    document.title = (d ? "Desafio: " + d.tema + " · " : t ? t.nome + " · " : "") + "Aulas da Profa. " + DADOS.professora;
   }
 
-  function aoMudarHash(){ estado.turma = escolher(); estado.projetar = false; gravarLocal("turma", estado.turma); render(); }
+  function aoMudarHash(){
+    var antes = estado.desafio;
+    lerHash();
+    if (estado.desafio !== antes) { estado.respostas = {}; estado.corrigido = false; estado.faltando = false; estado.filtro = "erradas"; embaralhar(desafioAtual()); }
+    estado.projetar = false;
+    gravarLocal("turma", estado.turma);
+    render();
+    window.scrollTo(0, 0);
+  }
   window.addEventListener("hashchange", aoMudarHash);
+
+  raiz.addEventListener("change", function(e){
+    var el = e.target;
+    if (el && el.type === "radio" && el.hasAttribute("data-q") && !estado.corrigido) {
+      estado.respostas[+el.getAttribute("data-q")] = +el.value;
+      var y = window.scrollY, nome = el.name;
+      render();
+      window.scrollTo(0, y);
+      var de = raiz.querySelector('input[name="' + nome + '"]:checked'); if (de) try { de.focus({ preventScroll: true }); } catch(er){}
+    }
+  });
+
   raiz.addEventListener("click", function(e){
     var b = e.target.closest && e.target.closest("[data-acao]");
     if (!b) return;
-    var acao = b.getAttribute("data-acao"), t = turmaAtual();
+    var acao = b.getAttribute("data-acao"), t = turmaAtual(), d = desafioAtual();
     if (acao === "projetar") { estado.projetar = true; estado.aviso = ""; }
     else if (acao === "fechar") estado.projetar = false;
     else if (acao === "copiar" && t) {
       var lk = linkTurma(t);
       try { navigator.clipboard.writeText(lk).then(function(){ estado.aviso = "Link copiado."; render(); }, function(){ estado.aviso = "Selecione o link acima e copie."; render(); }); } catch(er){ estado.aviso = "Selecione o link acima e copie."; }
     }
+    else if (acao === "corrigir" && d) {
+      var c = contar(d);
+      if (c.respondidas < c.total) {
+        estado.faltando = true;
+        render();
+        for (var i = 0; i < d.questoes.length; i++) if (estado.respostas[i] == null) { var q = document.getElementById("q" + i); if (q) q.scrollIntoView({ block: "start" }); break; }
+        return;
+      }
+      estado.corrigido = true;
+      estado.filtro = c.acertos < c.total ? "erradas" : "todas";
+      gravarLocal(chaveResultado(t, d), String(Math.round(100 * c.acertos / (c.total || 1))));
+      render();
+      window.scrollTo(0, 0);
+      var tp = document.getElementById("topo-desafio"); if (tp) try { tp.focus({ preventScroll: true }); } catch(er){}
+      return;
+    }
+    else if (acao === "refazer") { estado.respostas = {}; estado.corrigido = false; estado.faltando = false; embaralhar(d); render(); window.scrollTo(0, 0); return; }
+    else if (acao === "filtro") { estado.filtro = b.getAttribute("data-valor"); }
+    else return;
     render();
   });
   document.addEventListener("keydown", function(e){ if (e.key === "Escape" && estado.projetar) { estado.projetar = false; render(); } });
-  estado.turma = escolher();
+  lerHash();
+  embaralhar(desafioAtual());
   render();
 })();
 </script>
